@@ -1,9 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { mount } from "enzyme";
+import React from "react";
+import App from "./App";
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+const defaultProps = {};
+
+const render = overridingProps => {
+  const props = { ...defaultProps, ...overridingProps };
+  return mount(<App {...props} />);
+};
+
+it("contains the proper components", () => {
+  const wrapper = render();
+
+  expect(wrapper.find(".page-header").length).toEqual(1);
 });

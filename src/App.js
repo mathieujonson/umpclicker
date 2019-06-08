@@ -1,12 +1,11 @@
 import React from "react";
 import "./App.css";
+import { PageHeader } from "./components/PageHeader";
 
-function App() {
-  return (
-    <div className="App">
-      <header>UmpClicker coming soon!</header>
-    </div>
-  );
-}
+const App = () => (
+  <div className="app">
+    <PageHeader />
+  </div>
+);
 
 export default App;
