@@ -1,10 +1,37 @@
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  position: relative;
+}
+
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/images/background.jpg);
+  background-size: cover;
+  background-position: center center;
+  object-fit: contain;
+  filter: grayscale(100%);
 }
 
 code {
