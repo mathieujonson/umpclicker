@@ -9,8 +9,10 @@ const render = overridingProps => {
   return mount(<PageHeader {...props} />);
 };
 
-it("contains the proper components", () => {
+it("contains component and title", () => {
   const wrapper = render();
 
-  expect(wrapper.find(".page-header").length).toEqual(1);
+  const header = wrapper.find(".page-header");
+  expect(header.length).toEqual(1);
+  expect(header.text()).toEqual("UmpClicker");
 });
