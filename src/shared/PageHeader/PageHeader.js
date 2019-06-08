@@ -1,4 +1,4 @@
 import React from "react";
-import "./pageHeader.css";
+import "./pageHeader.scss";
 
 export const PageHeader = () => <div className="page-header">UmpClicker</div>;

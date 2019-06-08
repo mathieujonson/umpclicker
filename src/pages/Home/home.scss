@@ -1,0 +1,30 @@
+.home {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  opacity: 0.9;
+  padding: 1.875rem;
+  text-align: center;
+  min-width: 280px;
+  border-radius: 5px;
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  /* TODO: button and styles need to be pulled into separate component */
+  button {
+    padding: 1rem 1.25rem;
+    border-radius: 0.25rem;
+    background-color: #28a745;
+    border-color: #28a745;
+    -webkit-appearance: none;
+  }
+
+  button:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+}
