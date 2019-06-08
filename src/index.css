@@ -1,5 +1,18 @@
+@import-normalize;
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 html,
-body {
+body,
+#root {
   height: 100%;
   width: 100%;
 }

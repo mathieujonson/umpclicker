@@ -9,8 +9,18 @@ const render = overridingProps => {
   return mount(<Home {...props} />);
 };
 
-it("has the correct className", () => {
+describe("Home page content", () => {
   const wrapper = render();
 
-  expect(wrapper.find(".home").length).toEqual(1);
+  it("has the correct className", () => {
+    expect(wrapper.find(".home").length).toEqual(1);
+  });
+
+  it("contains the title", () => {
+    expect(wrapper.find("h1").text()).toEqual("Ready for the game?");
+  });
+
+  it("contains the button", () => {
+    expect(wrapper.find("button").text()).toEqual("Play Ball!");
+  });
 });
