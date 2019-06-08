@@ -13,4 +13,5 @@ it("contains the proper components", () => {
   const wrapper = render();
 
   expect(wrapper.find(".page-header").length).toEqual(1);
+  expect(wrapper.find(".page-footer").length).toEqual(1);
 });

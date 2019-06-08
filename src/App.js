@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import "./app.scss";
 import { Home } from "./pages/Home";
+import { PageFooter } from "./shared/PageFooter";
 import { PageHeader } from "./shared/PageHeader";
 
 const App = () => (
@@ -10,6 +12,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home} />
       </Switch>
+      <PageFooter />
     </div>
   </BrowserRouter>
 );

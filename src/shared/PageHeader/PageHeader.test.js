@@ -1,4 +1,4 @@
-import { mount } from "enzyme";
+import { shallow } from "enzyme";
 import React from "react";
 import { PageHeader } from "./PageHeader";
 
@@ -6,13 +6,12 @@ const defaultProps = {};
 
 const render = overridingProps => {
   const props = { ...defaultProps, ...overridingProps };
-  return mount(<PageHeader {...props} />);
+  return shallow(<PageHeader {...props} />);
 };
 
-it("contains component and title", () => {
+it("contains link and title", () => {
   const wrapper = render();
 
-  const header = wrapper.find(".page-header");
-  expect(header.length).toEqual(1);
-  expect(header.text()).toEqual("UmpClicker");
+  expect(wrapper.find(".page-header").length).toEqual(1);
+  expect(wrapper.find("Link").prop("to")).toEqual("/");
 });
