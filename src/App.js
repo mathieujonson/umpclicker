@@ -1,6 +1,5 @@
 import React from "react";
-import "./App.css";
-import { PageHeader } from "./components/PageHeader";
+import { PageHeader } from "./shared/PageHeader";
 
 const App = () => (
   <div className="app">
