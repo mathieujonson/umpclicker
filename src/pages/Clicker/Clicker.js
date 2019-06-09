@@ -8,7 +8,8 @@ export const Clicker = () => (
       <Counter label="Balls" count={2} />
       <Counter label="Strikes" count={1} />
       <Counter label="Outs" count={2} />
-      <button className="end-inning">End Inning</button>
+      <button className="clear-button">Clear Count</button>
+      <button className="clear-button">Clear Inning</button>
     </div>
 
     <h2>Game</h2>
