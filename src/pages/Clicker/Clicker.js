@@ -1,28 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import "./clicker.scss";
 
-export const Clicker = () => {
-  const [inningDescription, setInningDescription] = useState("top");
-
-  return (
-    <div className="clicker">
-      <h2>Current Inning</h2>
-      <div className="inning">
-        <Counter label="Balls" count={2} />
-        <Counter label="Strikes" count={1} />
-        <Counter label="Outs" count={2} />
-        <button className="end-inning">End Inning</button>
-      </div>
-
-      <h2>Game</h2>
-      <div className="game">
-        <Counter label="Home" count={2} />
-        <Counter label="Away" count={2} />
-        <Counter label="Inning" count={4} />
-      </div>
+export const Clicker = () => (
+  <div className="clicker">
+    <h2>Current Inning</h2>
+    <div className="inning">
+      <Counter label="Balls" count={2} />
+      <Counter label="Strikes" count={1} />
+      <Counter label="Outs" count={2} />
+      <button className="end-inning">End Inning</button>
     </div>
-  );
-};
+
+    <h2>Game</h2>
+    <div className="game">
+      <Counter label="Home" count={2} />
+      <Counter label="Away" count={2} />
+      <Counter label="Inning" count={4} />
+    </div>
+  </div>
+);
 
 const Counter = ({ label, count }) => (
   <div className="counter">
