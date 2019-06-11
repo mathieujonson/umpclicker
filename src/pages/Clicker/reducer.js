@@ -1,17 +1,17 @@
 export const clickerReducer = (state, action) => {
   switch (action.type) {
     case "ADD_STRIKES":
-      return { ...state, strikes: state.strikes === 3 ? 0 : state.strikes + 1 };
+      return { ...state, strikes: state.strikes === 2 ? 0 : state.strikes + 1 };
     case "MINUS_STRIKES":
-      return { ...state, strikes: state.strikes === 0 ? 3 : state.strikes - 1 };
+      return { ...state, strikes: state.strikes === 0 ? 2 : state.strikes - 1 };
     case "ADD_BALLS":
-      return { ...state, balls: state.balls === 4 ? 0 : state.balls + 1 };
+      return { ...state, balls: state.balls === 3 ? 0 : state.balls + 1 };
     case "MINUS_BALLS":
-      return { ...state, balls: state.balls === 0 ? 4 : state.balls - 1 };
+      return { ...state, balls: state.balls === 0 ? 3 : state.balls - 1 };
     case "ADD_OUTS":
-      return { ...state, outs: state.outs === 3 ? 0 : state.outs + 1 };
+      return { ...state, outs: state.outs === 2 ? 0 : state.outs + 1 };
     case "MINUS_OUTS":
-      return { ...state, outs: state.outs === 0 ? 3 : state.outs - 1 };
+      return { ...state, outs: state.outs === 0 ? 2 : state.outs - 1 };
     case "ADD_HOME":
       return { ...state, home: state.home + 1 };
     case "MINUS_HOME":
