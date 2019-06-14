@@ -20,12 +20,12 @@ export const Counter = ({ label }) => {
     <div className="counter">
       <h4>{label}</h4>
       <div className="count-container">
-        <button className="minus-button" onClick={minusClickHandler}>
-          -
-        </button>
-        <div className="count-number">{state[stateKey]}</div>
         <button className="plus-button" onClick={addClickHandler}>
           +
+        </button>
+        <div className="count-number">{state[stateKey]}</div>
+        <button className="minus-button" onClick={minusClickHandler}>
+          -
         </button>
       </div>
     </div>
