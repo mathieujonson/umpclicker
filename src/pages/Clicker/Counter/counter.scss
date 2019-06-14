@@ -1,10 +1,29 @@
 .counter {
+  position: relative;
   font-weight: bold;
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
   width: calc(33% - 25px);
   min-width: 60px;
+  &.top:before,
+  &.bottom:after {
+    content: "\203A";
+    display: inline-block;
+    position: absolute;
+    font-size: 2rem;
+    color: #ccc;
+  }
+  &.top:before {
+    top: 76px;
+    right: 12px;
+    transform: rotateZ(-90deg);
+  }
+  &.bottom:after {
+    top: 78px;
+    right: 5px;
+    transform: rotateZ(90deg);
+  }
   &:nth-of-type(2) {
     h4 {
       text-align: center;
@@ -47,7 +66,7 @@
   align-items: center;
   justify-content: center;
   height: 44px;
-  width: 44px;
+  width: 100%;
   padding: 0 0.75rem;
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
@@ -55,7 +74,7 @@
 
 button {
   height: 44px;
-  width: 44px;
+  width: 100%;
   border: 1px solid #ddd;
   -webkit-appearance: none;
 }

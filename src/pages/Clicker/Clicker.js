@@ -43,7 +43,7 @@ export const Clicker = () => {
         <div className="game">
           <Counter label="Home" />
           <Counter label="Away" />
-          <Counter label="Inning" />
+          <Counter label="Inning" className={state.halfInning} />
         </div>
       </div>
     </ClickerContext.Provider>
