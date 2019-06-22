@@ -15,6 +15,10 @@ exports.handler = async (event, context, callback) => {
       if (err) {
         callback(null, {
           statusCode: 200,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Credentials": true
+          },
           body: "Uh oh! Couldn't find the list of teams!"
         });
       } else {
@@ -22,6 +26,10 @@ exports.handler = async (event, context, callback) => {
         names.unshift("Us", "Them");
         callback(null, {
           statusCode: 200,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Credentials": true
+          },
           body: JSON.stringify(names)
         });
       }
