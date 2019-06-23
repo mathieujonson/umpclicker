@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useCallback, useReducer } from "react";
 import "./clicker.scss";
 import { Counter } from "./Counter/Counter";
 import { clickerReducer } from "./reducer";
@@ -17,6 +17,7 @@ export const ClickerContext = createContext();
 
 export const Clicker = () => {
   const [state, dispatch] = useReducer(clickerReducer, initialState);
+
   return (
     <ClickerContext.Provider value={{ state, dispatch }}>
       <div className="clicker">
@@ -27,13 +28,13 @@ export const Clicker = () => {
           <Counter label="Outs" />
           <button
             className="clear-button"
-            onClick={() => dispatch({ type: "CLEAR_INNING" })}
+            onClick={useCallback(() => dispatch({ type: "CLEAR_INNING" }), [])}
           >
             Clear Inning
           </button>
           <button
             className="clear-button"
-            onClick={() => dispatch({ type: "CLEAR_COUNT" })}
+            onClick={useCallback(() => dispatch({ type: "CLEAR_COUNT" }), [])}
           >
             Clear Count
           </button>

@@ -9,22 +9,4 @@
   h1 {
     font-size: 1.4rem;
   }
-
-  /* TODO: button and styles need to be pulled into separate component */
-  .primary-button {
-    display: inline-block;
-    width: 100%;
-    padding: 1rem 1.25rem;
-    border-radius: 0.25rem;
-    background-color: #28a745;
-    border-color: #28a745;
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .primary-button:hover {
-    cursor: pointer;
-    background-color: #218838;
-    border-color: #1e7e34;
-  }
 }

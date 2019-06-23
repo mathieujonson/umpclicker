@@ -9,7 +9,7 @@ const render = overridingProps => {
   return mount(<Clicker {...props} />);
 };
 
-describe("renders without crashing", () => {
+it("renders without crashing", () => {
   const wrapper = render();
 
   expect(wrapper.find(".clicker").length).toEqual(1);

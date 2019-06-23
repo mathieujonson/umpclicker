@@ -5,3 +5,24 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.primary-button {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border-radius: 0.25rem;
+  background-color: #28a745;
+  border-color: #28a745;
+  color: #fff;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #28a745;
+  }
+}
