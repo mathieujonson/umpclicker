@@ -85,7 +85,7 @@ const addGameToRecent = async (game, callback) => {
 
   const cleanedGames = recentGames.filter(
     game =>
-      currentTime - parseInt(game.startTime) / 1000 / 60 / 60 < 3 &&
+      (currentTime - parseInt(game.startTime)) / 1000 / 60 / 60 < 3 &&
       !game.isFinal
   );
 
