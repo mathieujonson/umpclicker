@@ -1,6 +1,4 @@
 export const createGame = async (home, away) => {
-  console.log("home", home);
-  console.log("away", away);
   const options = {
     method: "POST",
     headers: {
