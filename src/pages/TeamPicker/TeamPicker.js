@@ -10,22 +10,7 @@ export const TeamPicker = props => {
   const { state } = useContext(GlobalContext);
 
   useEffect(() => {
-    // setTeamNames([
-    //   "Us",
-    //   "Them",
-    //   "Angels",
-    //   "Braves",
-    //   "Cardinals",
-    //   "Cubs",
-    //   "Giants",
-    //   "Indians",
-    //   "Mets",
-    //   "Pirates",
-    //   "Red Sox",
-    //   "Royals",
-    //   "Twins",
-    //   "Yankees"
-    // ]);
+    // MOVE THIS TO SERVICE...AND RENAME SERVICE :joy:
     fetch("https://umpclicker.com/api/teams").then(response => {
       response.json().then(data => {
         setTeamNames(data);
