@@ -5,11 +5,28 @@ AWS.config.update({ region: "us-east-1" });
 const DynamoDB = new AWS.DynamoDB.DocumentClient();
 
 exports.handler = async (event, context, callback) => {
-  const home = event.home;
-  const away = event.away;
+  const body = JSON.parse(event.body);
+  const home = body.home;
+  const away = body.away;
+
+  const isValid = await areTeamsValid(home, away);
+
+  if (!isValid) {
+    callback(null, {
+      statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": true
+      },
+      body: JSON.stringify({ message: "Woah, team names are invalid" })
+    });
+    return;
+  }
 
   const game = {
-    gameName: `${home.toLowerCase()}-${away.toLowerCase()}`,
+    gameName: `${home.replace(" ", "_").toLowerCase()}-${away
+      .replace(" ", "_")
+      .toLowerCase()}`,
     homeTeam: home,
     awayTeam: away,
     startTime: new Date().getTime().toString(),
@@ -23,21 +40,17 @@ exports.handler = async (event, context, callback) => {
     isFinal: false
   };
 
-  const isValid = await areTeamsValid(event.home, event.away);
-
-  if (!isValid) {
-    callback(null, {
-      statusCode: 200,
-      body: "Woah, the teams aren't valid..."
-    });
-    return;
-  }
-
   await createGame(game);
-  await addGameToRecent(game);
+
+  await addGameToRecent(game, callback);
 
   callback(null, {
     statusCode: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": true,
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify(game)
   });
 };
@@ -63,7 +76,7 @@ const areTeamsValid = async (home, away) => {
     });
 };
 
-const addGameToRecent = async game => {
+const addGameToRecent = async (game, callback) => {
   const recentGames = await getRecentGames();
 
   recentGames.push(game);
@@ -81,7 +94,7 @@ const addGameToRecent = async game => {
     Item: {
       gameName: "recentGames",
       startTime: "list",
-      cleanedGames
+      recentGames: cleanedGames
     }
   };
 
