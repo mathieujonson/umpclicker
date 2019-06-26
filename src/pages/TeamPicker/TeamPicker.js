@@ -1,5 +1,6 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../../App";
+import { createGame } from "./service";
 import { TeamDropDown } from "./TeamDropDown";
 import "./teamPicker.scss";
 
@@ -14,7 +15,6 @@ export const TeamPicker = props => {
       "Angels",
       "Braves",
       "Cardinals",
-      "Cubs",
       "Cubs",
       "Giants",
       "Indians",
@@ -33,9 +33,10 @@ export const TeamPicker = props => {
     // });
   }, []);
 
-  const onClickHandler = useCallback(() => {
-    props.history.push("/clicker");
-  }, [props.history]);
+  const onClickHandler = useCallback(async () => {
+    const response = await createGame(state.home, state.away);
+    props.history.push(`/clicker/${response.gameName}+${response.startTime}`);
+  }, [props.history, state.home, state.away]);
 
   return (
     <div className="team-picker">
