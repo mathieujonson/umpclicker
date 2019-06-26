@@ -16,11 +16,11 @@ export const PageFooter = () => (
     <span>
       Website by{" "}
       <a
-        href="https://twitter.com/mathieujonson"
+        href="https://www.linkedin.com/in/matthew-johnson-1294b796/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        mathieujonson
+        Matthew Johnson
       </a>
     </span>
   </footer>
