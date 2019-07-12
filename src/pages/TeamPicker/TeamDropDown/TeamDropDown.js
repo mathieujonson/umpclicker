@@ -20,7 +20,7 @@ export const TeamDropDown = ({ teamNames, team }) => {
     state.home !== "" && state.home === state.away ? " error" : "";
 
   return (
-    <div className={`team-drop-down-wrapper${errorClass}`}>
+    <div className={`team-drop-down${errorClass}`}>
       <select onChange={changeHandler} value={state[team]}>
         <option>Select a team</option>
         {teamNames.map((name, index) => (
