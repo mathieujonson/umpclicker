@@ -15,7 +15,7 @@ const initialState = {
 
 export const ClickerContext = createContext();
 
-export const Clicker = () => {
+export const Clicker = ({ match }) => {
   const [state, dispatch] = useReducer(clickerReducer, initialState);
 
   return (
