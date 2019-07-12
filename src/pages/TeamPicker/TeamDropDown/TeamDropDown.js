@@ -1,5 +1,6 @@
 import React, { useCallback, useContext } from "react";
-import { GlobalContext } from "../../App";
+import { GlobalContext } from "../../../App";
+import "./teamDropDown.scss";
 
 export const TeamDropDown = ({ teamNames, team }) => {
   const { state, dispatch } = useContext(GlobalContext);
