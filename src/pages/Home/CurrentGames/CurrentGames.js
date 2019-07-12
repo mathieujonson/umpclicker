@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./currentGames.scss";
 
 export const CurrentGames = () => {
@@ -14,6 +15,7 @@ export const CurrentGames = () => {
     });
   }, [setRecentGames, setLoading]);
 
+  // TODO: possible cleanup opportunity...the nested ternary smells
   return (
     <div className="current-games">
       <h2>Current games:</h2>
@@ -21,11 +23,17 @@ export const CurrentGames = () => {
         <div className="waiter" />
       ) : (
         <ul>
-          {recentGames.map((game, index) => (
-            <li key={index}>
-              {game.homeTeam} vs {game.awayTeam}
+          {recentGames.length ? (
+            recentGames.map((game, index) => (
+              <li key={index}>
+                {game.homeTeam} vs {game.awayTeam}
+              </li>
+            ))
+          ) : (
+            <li>
+              No games playing. <Link to="/teams">Pick teams!</Link>
             </li>
-          ))}
+          )}
         </ul>
       )}
     </div>
