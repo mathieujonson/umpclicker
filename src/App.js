@@ -2,6 +2,7 @@ import React, { createContext, useReducer } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./app.scss";
 import { Clicker } from "./pages/Clicker";
+import { GooseEgg } from "./pages/GooseEgg";
 import { Home } from "./pages/Home";
 import { TeamPicker } from "./pages/TeamPicker";
 import { globalReducer } from "./reducer";
@@ -27,6 +28,7 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route exact path="/teams" component={TeamPicker} />
             <Route path="/clicker/:id" component={Clicker} />
+            <Route component={GooseEgg} />
           </Switch>
           <PageFooter />
         </div>
