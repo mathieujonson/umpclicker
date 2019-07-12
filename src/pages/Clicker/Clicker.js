@@ -1,6 +1,6 @@
 import React, { createContext, useCallback, useReducer } from "react";
 import "./clicker.scss";
-import { Counter } from "./Counter/Counter";
+import { Counter } from "./Counter";
 import { clickerReducer } from "./reducer";
 
 const initialState = {
