@@ -4,7 +4,7 @@ export const globalReducer = (state, action) => {
       return { ...state, home: action.payload };
     case "UPDATE_AWAY":
       return { ...state, away: action.payload };
-    case "CLEAR_TEAMS":
+    case "CLEAR_GAME":
       return { ...state, home: "", away: "" };
     default:
       return state;

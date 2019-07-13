@@ -8,7 +8,7 @@ export const Home = () => {
   const { dispatch } = useContext(GlobalContext);
 
   useEffect(() => {
-    dispatch({ type: "CLEAR_TEAMS" });
+    dispatch({ type: "CLEAR_GAME" });
   }, [dispatch]);
 
   return (
