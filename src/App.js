@@ -27,7 +27,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/teams" component={TeamPicker} />
-            <Route path="/clicker/:id" component={Clicker} />
+            <Route path="/clicker/:gameId" component={Clicker} />
             <Route component={GooseEgg} />
           </Switch>
           <PageFooter />

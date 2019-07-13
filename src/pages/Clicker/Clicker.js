@@ -1,4 +1,10 @@
-import React, { createContext, useCallback, useReducer } from "react";
+import React, {
+  createContext,
+  useCallback,
+  useEffect,
+  useReducer,
+  useRef
+} from "react";
 import "./clicker.scss";
 import { Counter } from "./Counter";
 import { clickerReducer } from "./reducer";
@@ -17,6 +23,14 @@ export const ClickerContext = createContext();
 
 export const Clicker = ({ match }) => {
   const [state, dispatch] = useReducer(clickerReducer, initialState);
+  let didMount = useRef(false);
+
+  useEffect(() => {
+    if (!didMount.current) {
+      console.log("gameId", match.params.gameId);
+    }
+    didMount.current = false;
+  });
 
   return (
     <ClickerContext.Provider value={{ state, dispatch }}>
