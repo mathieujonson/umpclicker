@@ -26,7 +26,7 @@ export const TeamPicker = props => {
   }, [props.history, state.home, state.away]);
 
   return (
-    <div className="team-picker">
+    <div className="content-container team-picker">
       {loading ? (
         <div className="waiter" />
       ) : (

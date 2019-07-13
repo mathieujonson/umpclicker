@@ -31,7 +31,8 @@ export const CurrentGames = () => {
             ))
           ) : (
             <li>
-              No games playing. <Link to="/teams">Pick teams!</Link>
+              No games playing. <br />
+              <Link to="/teams">Pick teams!</Link>
             </li>
           )}
         </ul>

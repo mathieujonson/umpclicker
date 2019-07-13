@@ -38,6 +38,18 @@ code {
     monospace;
 }
 
+.content-container {
+  background-color: #fff;
+  opacity: 0.9;
+  padding: 1.875rem;
+  text-align: center;
+  width: calc(100% - 2.5rem);
+  min-width: 280px;
+  max-width: 450px;
+  border-radius: 5px;
+  margin-bottom: 1.25rem;
+}
+
 .primary-button {
   display: inline-block;
   width: 100%;

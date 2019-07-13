@@ -12,7 +12,7 @@ export const Home = () => {
   }, [dispatch]);
 
   return (
-    <div className="home">
+    <div className="content-container home">
       <h1>Ready for the game?</h1>
       <Link className="primary-button" to="/teams">
         Pick Teams!
