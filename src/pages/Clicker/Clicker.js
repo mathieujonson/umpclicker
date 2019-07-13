@@ -35,7 +35,7 @@ export const Clicker = ({ match }) => {
   return (
     <ClickerContext.Provider value={{ state, dispatch }}>
       <div className="content-container clicker">
-        <h2>Current Inning</h2>
+        <h1>Current Inning</h1>
         <div className="inning">
           <Counter label="Balls" />
           <Counter label="Strikes" />
@@ -54,7 +54,7 @@ export const Clicker = ({ match }) => {
           </button>
         </div>
 
-        <h2>Game</h2>
+        <h1>Game</h1>
         <div className="game">
           <Counter label="Home" />
           <Counter label="Away" />
