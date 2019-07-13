@@ -18,24 +18,26 @@ export const CurrentGames = () => {
   // TODO: possible cleanup opportunity...the nested ternary smells
   return (
     <div className="current-games">
-      <h2>Current games:</h2>
       {loading ? (
         <div className="waiter" />
       ) : (
-        <ul>
-          {recentGames.length ? (
-            recentGames.map((game, index) => (
-              <li key={index}>
-                {game.homeTeam} vs {game.awayTeam}
+        <>
+          <h2>Current games:</h2>
+          <ul>
+            {recentGames.length ? (
+              recentGames.map((game, index) => (
+                <li key={index}>
+                  {game.homeTeam} vs {game.awayTeam}
+                </li>
+              ))
+            ) : (
+              <li>
+                No games playing. <br />
+                <Link to="/teams">Pick teams!</Link>
               </li>
-            ))
-          ) : (
-            <li>
-              No games playing. <br />
-              <Link to="/teams">Pick teams!</Link>
-            </li>
-          )}
-        </ul>
+            )}
+          </ul>
+        </>
       )}
     </div>
   );
