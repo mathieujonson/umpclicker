@@ -26,10 +26,19 @@ export const Clicker = ({ match }) => {
   let didMount = useRef(false);
 
   useEffect(() => {
-    if (!didMount.current) {
-      console.log("gameId", match.params.gameId);
+    if (didMount.current) {
+      const gameId = match.params.gameId;
+      const body = {
+        gameId,
+        ...state
+      };
+      console.log("body", body);
+      fetch(`https://umpclicker.com/api/game`, {
+        method: "PUT",
+        body: JSON.stringify(body)
+      });
     }
-    didMount.current = false;
+    didMount.current = true;
   });
 
   return (
