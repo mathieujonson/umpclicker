@@ -26,7 +26,7 @@ exports.handler = async (event, content, callback) => {
         });
       } else {
         const newGameData = {
-          ...data,
+          ...data.Item,
           ...requestBody
         };
 
