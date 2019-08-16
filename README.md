@@ -4,4 +4,4 @@ React app for umpclicker.com, which is basically an excuse to play with AWS Lamb
 
 ## To Deploy
 
-`aws s3 sync ./build s3://bucketname`
+CodePipeline is used to deploy to production when master is pushed to origin. Sweetness!
