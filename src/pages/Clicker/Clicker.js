@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  useCallback,
-  useEffect,
-  useReducer,
-  useRef
-} from "react";
+import React, { createContext, useCallback, useEffect, useReducer, useRef } from "react";
 import "./clicker.scss";
 import { Counter } from "./Counter";
 import { clickerReducer } from "./reducer";
@@ -16,7 +10,7 @@ const initialState = {
   inning: 1,
   halfInning: "top",
   home: 0,
-  away: 0
+  away: 0,
 };
 
 export const ClickerContext = createContext();
@@ -30,12 +24,12 @@ export const Clicker = ({ match }) => {
       const gameId = match.params.gameId;
       const body = {
         gameId,
-        ...state
+        ...state,
       };
-      console.log("body", body);
+
       fetch(`https://umpclicker.com/api/game`, {
         method: "PUT",
-        body: JSON.stringify(body)
+        body: JSON.stringify(body),
       });
     }
     didMount.current = true;
@@ -49,16 +43,10 @@ export const Clicker = ({ match }) => {
           <Counter label="Balls" />
           <Counter label="Strikes" />
           <Counter label="Outs" />
-          <button
-            className="clear-button"
-            onClick={useCallback(() => dispatch({ type: "CLEAR_INNING" }), [])}
-          >
+          <button className="clear-button" onClick={useCallback(() => dispatch({ type: "CLEAR_INNING" }), [])}>
             Clear Inning
           </button>
-          <button
-            className="clear-button"
-            onClick={useCallback(() => dispatch({ type: "CLEAR_COUNT" }), [])}
-          >
+          <button className="clear-button" onClick={useCallback(() => dispatch({ type: "CLEAR_COUNT" }), [])}>
             Clear Count
           </button>
         </div>
